@@ -10,7 +10,8 @@ const headerSocial = social.filter(
     item.label === "YouTube" ||
     item.label === "Facebook page" ||
     item.label === "Instagram" ||
-    item.label === "LinkedIn",
+    item.label === "LinkedIn" ||
+    item.label === "X",
 );
 
 function socialLabel(label: string) {
