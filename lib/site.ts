@@ -42,7 +42,7 @@ export const social = [
   },
   {
     label: "LinkedIn",
-    href: "https://uk.linkedin.com/in/michael-cretu-715b892a",
+    href: "https://www.linkedin.com/in/michael-cretu-715b892a",
   },
 ] as const;
 

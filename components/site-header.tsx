@@ -9,7 +9,8 @@ const headerSocial = social.filter(
   (item) =>
     item.label === "YouTube" ||
     item.label === "Facebook page" ||
-    item.label === "Instagram",
+    item.label === "Instagram" ||
+    item.label === "LinkedIn",
 );
 
 export function SiteHeader() {
