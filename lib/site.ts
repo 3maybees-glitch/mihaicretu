@@ -29,8 +29,8 @@ export const social = [
     href: "https://www.youtube.com/@MichaelCretu-Trio",
   },
   {
-    label: "Facebook",
-    href: "https://www.facebook.com/michael.cretu.1/",
+    label: "Facebook page",
+    href: "https://www.facebook.com/michael.cretu.1",
   },
   {
     label: "Instagram",

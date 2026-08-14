@@ -3,7 +3,11 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { nav, site } from "@/lib/site";
+import { nav, site, social } from "@/lib/site";
+
+const headerSocial = social.filter(
+  (item) => item.label === "YouTube" || item.label === "Facebook page",
+);
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -21,27 +25,42 @@ export function SiteHeader() {
           </p>
         </Link>
 
-        <nav className="hidden items-center gap-5 lg:flex" aria-label="Primary">
-          {nav.map((item) => {
-            const active =
-              item.href === "/"
-                ? pathname === "/"
-                : pathname.startsWith(item.href);
-            return (
-              <Link
+        <div className="hidden items-center gap-6 lg:flex">
+          <nav className="flex items-center gap-5" aria-label="Primary">
+            {nav.map((item) => {
+              const active =
+                item.href === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(item.href);
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`text-[13px] tracking-wide transition-colors ${
+                    active
+                      ? "text-amber-bright"
+                      : "text-paper-muted hover:text-paper"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+          </nav>
+          <div className="flex items-center gap-3 border-l border-line pl-5">
+            {headerSocial.map((item) => (
+              <a
                 key={item.href}
                 href={item.href}
-                className={`text-[13px] tracking-wide transition-colors ${
-                  active
-                    ? "text-amber-bright"
-                    : "text-paper-muted hover:text-paper"
-                }`}
+                target="_blank"
+                rel="noreferrer"
+                className="text-[13px] text-amber hover:text-amber-bright"
               >
                 {item.label}
-              </Link>
-            );
-          })}
-        </nav>
+              </a>
+            ))}
+          </div>
+        </div>
 
         <button
           type="button"
@@ -73,6 +92,20 @@ export function SiteHeader() {
                 >
                   {item.label}
                 </Link>
+              </li>
+            ))}
+          </ul>
+          <ul className="mt-6 flex flex-col gap-2 border-t border-line pt-4">
+            {headerSocial.map((item) => (
+              <li key={item.href}>
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-amber"
+                >
+                  {item.label}
+                </a>
               </li>
             ))}
           </ul>
