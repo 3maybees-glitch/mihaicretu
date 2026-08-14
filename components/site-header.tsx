@@ -6,7 +6,10 @@ import { useState } from "react";
 import { nav, site, social } from "@/lib/site";
 
 const headerSocial = social.filter(
-  (item) => item.label === "YouTube" || item.label === "Facebook page",
+  (item) =>
+    item.label === "YouTube" ||
+    item.label === "Facebook page" ||
+    item.label === "Instagram",
 );
 
 export function SiteHeader() {
