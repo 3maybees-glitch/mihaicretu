@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -26,13 +27,28 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-line bg-ink/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-start justify-between gap-6 px-5 py-4 md:px-8">
         <div>
-          <Link href="/" onClick={() => setOpen(false)}>
-            <p className="font-display text-xl tracking-wide text-paper md:text-2xl">
-              {site.name}
-            </p>
-            <p className="text-[11px] uppercase tracking-[0.22em] text-amber">
-              {site.tagline}
-            </p>
+          <Link
+            href="/"
+            onClick={() => setOpen(false)}
+            className="flex items-center gap-3"
+          >
+            <Image
+              src="/images/michael-cretu-trio-logo.png"
+              alt=""
+              width={890}
+              height={837}
+              priority
+              sizes="64px"
+              className="h-14 w-auto shrink-0 md:h-16"
+            />
+            <span>
+              <span className="block font-display text-xl tracking-wide text-paper md:text-2xl">
+                {site.name}
+              </span>
+              <span className="block text-[11px] uppercase tracking-[0.22em] text-amber">
+                {site.tagline}
+              </span>
+            </span>
           </Link>
           <nav
             className="mt-2 flex flex-wrap gap-x-3 gap-y-1"
