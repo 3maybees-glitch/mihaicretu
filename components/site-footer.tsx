@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SiteLogo } from "@/components/site-logo";
 import { nav, site, social } from "@/lib/site";
 
 export function SiteFooter() {
@@ -7,8 +8,10 @@ export function SiteFooter() {
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-5 py-12 md:px-8">
         <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
           <div>
-            <p className="font-display text-3xl text-paper">{site.name}</p>
-            <p className="mt-3 max-w-md text-sm leading-relaxed text-paper-muted">
+            <Link href="/" className="block w-40" aria-label={site.name}>
+              <SiteLogo decorative />
+            </Link>
+            <p className="mt-4 max-w-md text-sm leading-relaxed text-paper-muted">
               {site.footerLine}
             </p>
           </div>

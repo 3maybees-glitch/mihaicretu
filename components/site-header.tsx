@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { SiteLogo } from "@/components/site-logo";
 import { nav, site, social } from "@/lib/site";
 
 const headerSocial = social.filter(
@@ -26,13 +27,24 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-line bg-ink/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-start justify-between gap-6 px-5 py-4 md:px-8">
         <div>
-          <Link href="/" onClick={() => setOpen(false)}>
-            <p className="font-display text-xl tracking-wide text-paper md:text-2xl">
-              {site.name}
-            </p>
-            <p className="text-[11px] uppercase tracking-[0.22em] text-amber">
-              {site.tagline}
-            </p>
+          <Link
+            href="/"
+            onClick={() => setOpen(false)}
+            className="flex items-center gap-3"
+          >
+            <SiteLogo
+              variant="mark"
+              decorative
+              className="h-12 w-12 shrink-0 md:h-14 md:w-14"
+            />
+            <span>
+              <span className="block font-display text-xl tracking-wide text-paper md:text-2xl">
+                {site.name}
+              </span>
+              <span className="block text-[11px] uppercase tracking-[0.22em] text-amber">
+                {site.tagline}
+              </span>
+            </span>
           </Link>
           <nav
             className="mt-2 flex flex-wrap gap-x-3 gap-y-1"
