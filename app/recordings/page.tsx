@@ -7,7 +7,7 @@ import { albums } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Recordings",
   description:
-    "Recordings by Michael Cretu, solo double bassist and composer: Johnny with the trio, and The Byzantium Connection.",
+    "Recordings by Michael Cretu, solo double bassist and composer: Johnny with the trio, and The Byzantium Connection — available to buy on Amazon.",
 };
 
 export default function RecordingsPage() {
@@ -15,8 +15,9 @@ export default function RecordingsPage() {
     <div className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
       <PageIntro eyebrow="Discography" title="Recordings">
         <p>
-          Two albums are available now. A new trio record is in production and
-          will take this page when it is ready.
+          Two albums are available now. Buy The Byzantium Connection on Amazon,
+          or follow the links on each record. A new trio record is in production
+          and will take this page when it is ready.
         </p>
       </PageIntro>
 
@@ -46,6 +47,11 @@ export default function RecordingsPage() {
               <p className="mt-5 max-w-2xl leading-relaxed text-paper-muted">
                 {album.summary}
               </p>
+              {album.links.some((link) => link.primary) ? (
+                <p className="mt-4 text-sm text-amber">
+                  CD available now on Amazon.
+                </p>
+              ) : null}
               <div className="mt-6 flex flex-wrap gap-3">
                 {album.featured ? (
                   <Link
@@ -61,7 +67,11 @@ export default function RecordingsPage() {
                     href={link.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="border border-line px-4 py-2 text-xs uppercase tracking-[0.18em] text-paper-muted hover:border-amber hover:text-paper"
+                    className={
+                      link.primary
+                        ? "border border-amber bg-amber px-4 py-2 text-xs uppercase tracking-[0.18em] text-ink hover:bg-amber-bright"
+                        : "border border-line px-4 py-2 text-xs uppercase tracking-[0.18em] text-paper-muted hover:border-amber hover:text-paper"
+                    }
                   >
                     {link.label}
                   </a>

@@ -50,6 +50,8 @@ export const social = [
 export type AlbumLink = {
   label: string;
   href: string;
+  /** Highlighted purchase CTA — keep the retailer name in the label. */
+  primary?: boolean;
 };
 
 export type Album = {
@@ -148,6 +150,11 @@ export const albums: Album[] = [
       "Realised with the support of the University of Salford",
     ],
     links: [
+      {
+        label: "Buy on Amazon",
+        href: "https://a.co/d/072KmBTZ",
+        primary: true,
+      },
       {
         label: "Prima Facie",
         href: "https://ascrecords.com/primafacie/byzantium_connection.html",
