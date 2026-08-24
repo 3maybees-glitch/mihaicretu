@@ -1,4 +1,4 @@
-import { featuredAlbum, site } from "@/lib/site";
+import { albums, featuredAlbum, site } from "@/lib/site";
 
 export function JsonLd() {
   const data = {
@@ -32,6 +32,34 @@ export function JsonLd() {
     recordLabel: featuredAlbum.label,
   };
 
+  const storeAlbums = albums
+    .filter((item) => item.links.some((link) => link.primary))
+    .map((item) => {
+      const store = item.links.find((link) => link.primary);
+      return {
+        "@context": "https://schema.org",
+        "@type": "MusicAlbum",
+        name: item.title,
+        byArtist: {
+          "@type": "MusicGroup",
+          name: item.ensemble,
+        },
+        datePublished: item.year,
+        recordLabel: item.label,
+        offers: store
+          ? {
+              "@type": "Offer",
+              url: store.href,
+              availability: "https://schema.org/InStock",
+              seller: {
+                "@type": "Organization",
+                name: "Amazon",
+              },
+            }
+          : undefined,
+      };
+    });
+
   return (
     <>
       <script
@@ -42,6 +70,13 @@ export function JsonLd() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(album) }}
       />
+      {storeAlbums.map((item) => (
+        <script
+          key={item.name}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(item) }}
+        />
+      ))}
     </>
   );
 }
