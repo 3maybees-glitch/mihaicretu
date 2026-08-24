@@ -6,7 +6,7 @@ export const site = {
   description:
     "Michael Cretu is an internationally recognised composer and solo double bassist, and musical director of the Manchester International Roots Orchestra. He lives and works in Manchester, UK.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
-  logo: "/images/logo.svg",
+  logo: "/images/logo.png",
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "",
   footerLine:
     "Composer and solo double bassist. Musical director, Manchester International Roots Orchestra. Lives and works in Manchester, UK.",

@@ -35,6 +35,7 @@ export function SiteHeader() {
             <SiteLogo
               variant="mark"
               decorative
+              priority
               className="h-12 w-12 shrink-0 md:h-14 md:w-14"
             />
             <span>
