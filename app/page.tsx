@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AlbumArt } from "@/components/album-art";
+import { SiteLogo } from "@/components/site-logo";
 import { featuredAlbum, quotes, site } from "@/lib/site";
 
 export default function Home() {
@@ -29,7 +30,8 @@ export default function Home() {
             <h1 className="mt-4 font-display text-6xl leading-[0.9] text-paper md:text-8xl">
               {featuredAlbum.title}
             </h1>
-            <p className="mt-5 font-display text-2xl text-amber-bright">
+            <p className="mt-5 flex items-center gap-3 font-display text-2xl text-amber-bright">
+              <SiteLogo variant="mark" decorative className="h-9 w-9 shrink-0" />
               {featuredAlbum.ensemble}
             </p>
             <p className="mt-2 text-sm uppercase tracking-[0.2em] text-paper-muted">

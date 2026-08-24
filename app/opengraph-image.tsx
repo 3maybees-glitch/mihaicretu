@@ -19,15 +19,34 @@ export default function OpenGraphImage() {
           padding: 72,
         }}
       >
-        <div
-          style={{
-            fontSize: 22,
-            letterSpacing: "0.28em",
-            textTransform: "uppercase",
-            color: "#c9a36a",
-          }}
-        >
-          The new album
+        <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+          <div
+            style={{
+              width: 72,
+              height: 72,
+              borderRadius: 999,
+              border: "3px solid #ffffff",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              boxShadow: "inset 0 0 0 1px #7A99D1",
+              color: "#7A99D1",
+              fontSize: 28,
+              fontStyle: "italic",
+            }}
+          >
+            Mc
+          </div>
+          <div
+            style={{
+              fontSize: 22,
+              letterSpacing: "0.28em",
+              textTransform: "uppercase",
+              color: "#c9a36a",
+            }}
+          >
+            The new album
+          </div>
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ fontSize: 92, lineHeight: 0.9 }}>Johnny</div>

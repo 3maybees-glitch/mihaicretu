@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { AlbumArt } from "@/components/album-art";
 import { PageIntro } from "@/components/page-intro";
+import { SiteLogo } from "@/components/site-logo";
 import { featuredAlbum } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -36,6 +37,9 @@ export default function AlbumPage() {
         </div>
 
         <div>
+          <div className="mb-8 w-36">
+            <SiteLogo />
+          </div>
           <PageIntro eyebrow="The new album" title={album.title}>
             <p>
               {album.ensemble} · {album.label} · {album.year}
