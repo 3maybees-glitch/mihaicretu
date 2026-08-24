@@ -19,8 +19,8 @@ export default async function OpenGraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#0b0907",
-          color: "#f3ead8",
+          background: "#000000",
+          color: "#7A99D1",
           padding: 72,
         }}
       >
@@ -31,7 +31,7 @@ export default async function OpenGraphImage() {
               fontSize: 22,
               letterSpacing: "0.28em",
               textTransform: "uppercase",
-              color: "#c9a36a",
+              color: "#7A99D1",
             }}
           >
             The new album
@@ -39,11 +39,11 @@ export default async function OpenGraphImage() {
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ fontSize: 92, lineHeight: 0.9 }}>Johnny</div>
-          <div style={{ marginTop: 16, fontSize: 36, color: "#e4c48a" }}>
+          <div style={{ marginTop: 16, fontSize: 36, color: "#9BB4D9" }}>
             Michael Cretu Trio
           </div>
         </div>
-        <div style={{ fontSize: 24, color: "#c9b89a" }}>
+        <div style={{ fontSize: 24, color: "#9BB4D9" }}>
           Composer · Solo Double Bass · Manchester
         </div>
       </div>

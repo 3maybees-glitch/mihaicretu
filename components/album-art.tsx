@@ -24,7 +24,7 @@ export function AlbumArt({ album, priority = false, className = "" }: AlbumArtPr
 
   return (
     <div
-      className={`flex aspect-square w-full flex-col justify-between bg-[radial-gradient(circle_at_30%_20%,#3a2a18,var(--ink))] p-8 ${className}`}
+      className={`flex aspect-square w-full flex-col justify-between bg-[radial-gradient(circle_at_30%_20%,#1a2740,var(--ink))] p-8 ${className}`}
     >
       <p className="text-xs uppercase tracking-[0.28em] text-amber">{album.year}</p>
       <div>

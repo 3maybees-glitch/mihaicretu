@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --ink: #0b0907;
-  --ink-soft: #14110d;
-  --panel: #1b1611;
-  --paper: #f3ead8;
-  --paper-muted: #c9b89a;
-  --amber: #c9a36a;
-  --amber-bright: #e4c48a;
-  --line: rgba(201, 163, 106, 0.22);
+  --ink: #000000;
+  --ink-soft: #07080b;
+  --panel: #0c1018;
+  --paper: #7a99d1;
+  --paper-muted: #9bb4d9;
+  --amber: #7a99d1;
+  --amber-bright: #b6c9e8;
+  --line: rgba(122, 153, 209, 0.28);
 }
 
 @theme inline {
@@ -36,8 +36,8 @@ body {
 }
 
 ::selection {
-  background: rgba(201, 163, 106, 0.35);
-  color: var(--paper);
+  background: rgba(122, 153, 209, 0.35);
+  color: var(--ink);
 }
 
 .grain {
