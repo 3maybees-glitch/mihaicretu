@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { AlbumArt } from "@/components/album-art";
 import { PageIntro } from "@/components/page-intro";
@@ -20,6 +21,48 @@ export default function RecordingsPage() {
           and will take this page when it is ready.
         </p>
       </PageIntro>
+
+      <section className="mt-16">
+        <h2 className="text-xs uppercase tracking-[0.28em] text-amber">
+          Coming soon
+        </h2>
+        <article className="mt-8 grid items-start gap-8 border-t border-line pt-12 md:grid-cols-[240px_1fr]">
+          <div className="space-y-6">
+            <Image
+              src="/images/asopos-gaze-cover.jpeg"
+              alt="Asopos Gaze album cover: MICHAEL CRETU TRIO over a misty blue river valley at sunrise"
+              width={1024}
+              height={1024}
+              sizes="(min-width: 768px) 240px, 90vw"
+              className="aspect-square w-full object-cover"
+            />
+            <Image
+              src="/images/asopos-gaze-2.jpeg"
+              alt="Michael Cretu Trio in the studio: Michael Cretu, Ed Barnwell, and Rob Turner with piano, double bass, and drums"
+              width={1024}
+              height={768}
+              sizes="(min-width: 768px) 240px, 90vw"
+              className="w-full object-cover"
+            />
+          </div>
+          <div>
+            <h3 className="font-display text-4xl text-paper">
+              New Album Coming Soon — Asopos Gaze
+            </h3>
+            <p className="mt-5 max-w-2xl leading-relaxed text-paper-muted">
+              Inspired by Johnny Răducanu&apos;s iconic composition „Pe Olt”.
+            </p>
+            <ul className="mt-6 space-y-2 text-paper-muted">
+              <li>Michael Cretu – Composer &amp; Double Bass</li>
+              <li>Ed Barnwell – Piano</li>
+              <li>
+                Rob Turner – Drums &amp; Producer (ex-GoGo Penguin, currently
+                touring with Mammal Hands)
+              </li>
+            </ul>
+          </div>
+        </article>
+      </section>
 
       <div className="mt-16 grid gap-16">
         {albums.map((album) => (
